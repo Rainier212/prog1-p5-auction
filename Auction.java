@@ -99,5 +99,22 @@ public class Auction
             return null;
         }
     }
+    
+    /**
+     * Question 3
+     */
+    public void close()
+    {
+        for(Lot aLot : listOfLots){
+            Bid highest = aLot.getHighestBid();
+            if(highest == null){
+                System.out.println("No bid for lot number " + aLot.getNumber());
+            } else {
+                System.out.println("Highest bid for lot number " + aLot.getNumber() + " was " + highest.getValue());
+                System.out.println("Bidder was " + highest.getBidder().getName());
+            }
+        }
+    }
 }
+
 
