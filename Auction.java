@@ -115,6 +115,21 @@ public class Auction
             }
         }
     }
+    
+    /**
+     * Question 6 (4 question)
+     */
+    public ArrayList<Lot> getUnsold()
+    {
+        ArrayList<Lot> unsold = new ArrayList<>();
+        for(Lot aLot : listOfLots){
+            Bid highest = aLot.getHighestBid();
+            if(highest == null){
+               unsold.add(aLot); 
+            }
+        }
+        return unsold;
+    }
 }
 
 
