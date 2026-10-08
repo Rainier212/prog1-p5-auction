@@ -1,4 +1,5 @@
 import java.util.ArrayList;
+import java.util.Iterator;
 
 /**
  * A simple model of an auction.
@@ -90,6 +91,27 @@ public class Auction
         
         System.out.println("Lot number: " + lotNumber +
                                " does not exist.");
+        return null;
+    }
+    
+    /**
+     * Question 7 (originally 9)
+     * Remove the lot with the given lot number.
+     * @param number The number of the lot to be removed.
+     * @return The Lot with the given number, or null if
+     * there is no such lot.
+     */
+    public Lot removeLot(int number)
+    {
+        Iterator<Lot> it = listOfLots.iterator();
+        while(it.hasNext()){
+            Lot aLot = it.next();
+            if(aLot.getNumber() == number){
+                it.remove();
+                return aLot;
+            } 
+        }
+        // No lot was found with this number.
         return null;
     }
     
